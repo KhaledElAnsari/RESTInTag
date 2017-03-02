@@ -4,6 +4,7 @@ it was inspired by [RestfulizerJs by Ifnot](https://github.com/Ifnot/Restfulizer
 
 # Usage
 easy! just add the following attributes to your HTML tag:
+
 1. `data-method`: the request type, GET, POST, PUT, etc.
 2. `data-target`: the url to send/get the data
 3. `data-disabled`: `true` to disable the tag until the request is done else just put `false`
