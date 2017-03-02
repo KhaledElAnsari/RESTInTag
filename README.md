@@ -9,6 +9,14 @@ easy! just add the following attributes to your HTML tag:
 2. `data-target`: the url to send/get the data
 3. `data-disabled`: `true` to disable the tag until the request is done else just put `false`
 
+example:
+
+```html
+<button data-target="http://example.com/post/post-id/" data-method="DELETE" data-disabled="true">Delete Article</button>
+```
+
+or you can use the javascript apis, note the data attributes have the priority.
+
 # API
 ## jQuery
 after adding jQuery use the `restintag()` function to do the magic
