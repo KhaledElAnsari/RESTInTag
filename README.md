@@ -27,3 +27,5 @@ options are the following (the seen values are the default):
     disable: true // to disable the clicking event until the request is finished
 }
 ```
+
+download it from [here](https://github.com/KhaledElAnsari/RESTInTag/blob/master/src/rest-in-tag.js)
