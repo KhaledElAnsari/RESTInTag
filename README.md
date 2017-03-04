@@ -4,7 +4,7 @@ it was inspired by [RestfulizerJs by Ifnot](https://github.com/Ifnot/Restfulizer
 
 # Install
 
-## Simple Download
+### Simple Download
 
  - [jQuery version](https://raw.githubusercontent.com/KhaledElAnsari/RESTInTag/master/src/restintag.jquery.js)
  - [Vanilla Javascript](https://raw.githubusercontent.com/KhaledElAnsari/RESTInTag/master/src/restintag.vanilla.js)
@@ -15,7 +15,7 @@ it was inspired by [RestfulizerJs by Ifnot](https://github.com/Ifnot/Restfulizer
 <script src="path/to/js/restintag.vanilla.js"></script>
  ```
 
-## NPM
+### NPM
 Install via this command
 ```
 npm install --save restintag
@@ -38,7 +38,7 @@ or you can use the javascript apis, note the data attributes have the priority.
 
 # API
 
-## Vanilla
+### Vanilla
 The zero dependency version, just add it to any project you have and it will work
 
 ```javascript
@@ -58,7 +58,7 @@ options are the following (the seen values are the default):
 }
 ```
 
-## jQuery
+### jQuery
 after adding jQuery use the `restintag()` function to do the magic
 
 ```javascript
