@@ -20,11 +20,12 @@ or you can use the javascript apis, note the data attributes have the priority.
 # API
 ## jQuery
 after adding jQuery use the `restintag()` function to do the magic
-```
-restintag(options: Object, successCallback: Function, errorCallback: Function)
+
+```javascript
+$(".selector").restintag(options: Object, successCallback: Function, errorCallback: Function): jQuery
 ```
 options are the following (the seen values are the default):
-```
+```javascript
 {
     parse: false, // if you have query string, it will add them to the request body
     target: null, // the url
@@ -36,4 +37,4 @@ options are the following (the seen values are the default):
 }
 ```
 
-download it from [here](https://github.com/KhaledElAnsari/RESTInTag/blob/master/src/rest-in-tag.js)
+download it from [here](https://raw.githubusercontent.com/KhaledElAnsari/RESTInTag/master/src/rest-in-tag.js)

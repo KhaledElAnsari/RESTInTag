@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Rest-In-Tag</title>
+</head>
+
+<body>
+    <a id="test" class="test" data-method="GET" data-target="http://jsonplaceholder.typicode.com/posts?userId=1"
+                 data-disabled="true" href="/">
+        GET!
+    </a>
+    <button class="test" data-method="POST" data-target="http://jsonplaceholder.typicode.com/posts"
+                 data-disabled="true" href="/">
+        POST!
+    </button>
+    <a class="test" data-method="DELETE" data-target="http://jsonplaceholder.typicode.com/posts/1"
+                 data-disabled="true" href="/">
+        DELETE!
+    </a>
+
+    <script src="./jquery.1.9.1.min.js"></script>
+    <script src="./restintag.jquery.js"></script>
+    <script src="./restintag.vanilla.js"></script>
+    <script>
+        var options = {
+            "parse": true,
+            "headers": {
+                "Content-Type": "application/json; charset=UTF-8"
+            },
+            "data": {
+                "title": "hello",
+                "body": "hello body",
+                "userId": 1
+            }
+        };
+        // $(".test").restintag({
+        //     parse: true
+        // },
+        // function(data) {
+        //     console.log(data);
+        // });
+
+        restintag(".test", options, function(data) {
+            console.log(data);
+        }, function(error) {
+            console.log(error);
+        });
+    </script>
+</body>
+
+</html>

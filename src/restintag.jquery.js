@@ -2,7 +2,7 @@
  * Rest-In-Tag 0.1.0
  * http://ifnot.github.io/RestfulizerJs/
  *
- * Inspired by froztbytes works :
+ * Inspired by Favre Anael works :
  * https://github.com/Ifnot/RestfulizerJs
  *
  * Copyright 2017 Khaled Al-Ansari
@@ -50,7 +50,9 @@
 
             if(typeof thisOptions.data !== "string" && thisOptions.method !== "GET") thisOptions.data = JSON.stringify(thisOptions.data);
             
-            $this.on("click", function() {
+            $this.on("click", function(event) {
+                event.preventDefault();
+                event.stopPropagation();
                 if(isDisabled) {
                     $this.attr("disabled", isDisabled);
                     $this.css({
