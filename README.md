@@ -18,6 +18,10 @@ example:
 or you can use the javascript apis, note the data attributes have the priority.
 
 # API
+
+## Vanilla
+Soon!
+
 ## jQuery
 after adding jQuery use the `restintag()` function to do the magic
 
