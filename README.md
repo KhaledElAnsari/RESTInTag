@@ -21,6 +21,26 @@ Install via this command
 npm install --save restintag
 ```
 
+then in your main javascript file do the following
+
+```javascript
+// For vanilla version
+var restintag = require("restintag").vanilla;
+restintag(".test", {}, function(data) {
+    console.log(data);
+});
+
+// For jQuery version
+var jquery = require("jquery");
+window.$ = window.jQuery = jquery;
+var restintag = require("restintag").jquery;
+jquery.fn.restintag = restintag;
+
+$(".test").restintag({}, function(data) {
+    console.log(data);
+});
+```
+
 # Usage
 easy! just add the following attributes to your HTML tag:
 

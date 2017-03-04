@@ -1,3 +1,15 @@
+/**!
+ * Rest-In-Tag 0.1.0
+ * https://github.com/KhaledElAnsari/RESTInTag/
+ *
+ * Inspired by Favre Anael works :
+ * https://github.com/Ifnot/RestfulizerJs
+ *
+ * Copyright 2017 Khaled Al-Ansari
+ * Released under the MIT license
+ * https://github.com/KhaledElAnsari/RESTInTag/blob/master/LICENSE
+ */
+
 var restintag = function(selector, options, successCB, errorCB) {
     if(selector === "undefined" || selector === null) {
         throw new Error("selector must be provided");
@@ -6,7 +18,10 @@ var restintag = function(selector, options, successCB, errorCB) {
         throw new TypeError("selector must be a string");
     }
     
-    if (!(options instanceof Object) || Object.prototype.toString.call(options) !== "[object Object]") {
+    if(!options) {
+        options = {};
+    }
+    else if (!(options instanceof Object) || Object.prototype.toString.call(options) !== "[object Object]") {
         throw new TypeError("the options is not an object");
     }
 
@@ -63,10 +78,10 @@ var restintag = function(selector, options, successCB, errorCB) {
             xhr.onreadystatechange = function() {
                 if (this.readyState == 4) {
                     if(xhr.status >= 200 && xhr.status < 400) {
-                        if(successCB) successCB(JSON.parse(xhr.responseText));
+                        if(successCB && typeof successCB === "function") successCB(JSON.parse(xhr.responseText));
                     }
                     else {
-                        if(errorCB) errorCB(xhr.responseText);
+                        if(errorCB && typeof errorCB === "function") errorCB(xhr.responseText);
                         else console.log("Server response for " + thisOptions.target + " is " + this.status);
                     }
 
@@ -87,4 +102,9 @@ var restintag = function(selector, options, successCB, errorCB) {
     });
 };
 
-module.exports = restintag;
+if (typeof exports !== 'undefined') {
+  if (typeof module !== 'undefined' && module.exports) {
+    exports = module.exports = restintag;
+  }
+  exports.restintag = restintag;
+}

@@ -19,8 +19,8 @@
     </a>
 
     <script src="./jquery.1.9.1.min.js"></script>
-    <script src="../src/restintag.jquery.js"></script>
-    <script src="../src/restintag.vanilla.js"></script>
+    <script src="../src/jquery/restintag.jquery.js"></script>
+    <!--<script src="../src/vanilla/restintag.vanilla.js"></script>-->
     <script>
         var options = {
             "parse": true,
@@ -33,18 +33,18 @@
                 "userId": 1
             }
         };
-        // $(".test").restintag({
-        //     parse: true
-        // },
-        // function(data) {
-        //     console.log(data);
-        // });
-
-        restintag(".test", options, function(data) {
+        $(".test").restintag({
+            parse: true
+        },
+        function(data) {
             console.log(data);
-        }, function(error) {
-            console.log(error);
         });
+
+        // restintag(".test", options, function(data) {
+        //     console.log(data);
+        // }, function(error) {
+        //     console.log(error);
+        // });
     </script>
 </body>
 

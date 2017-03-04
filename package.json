@@ -1,8 +1,8 @@
 {
   "name": "restintag",
-  "version": "0.1.1",
+  "version": "0.1.5",
   "description": "HTTP requests made easy through HTML tags",
-  "main": "./src/",
+  "main": "./src/index.js",
   "directories": {
     "test": "test"
   },
@@ -40,9 +40,5 @@
     "rollup": "^0.41.4",
     "uglifyjs": "^2.4.10"
   },
-  "dependencies": {
-    "rimraf": "^2.6.1",
-    "rollup": "^0.41.4",
-    "uglifyjs": "^2.4.10"
-  }
+  "dependencies": {}
 }
