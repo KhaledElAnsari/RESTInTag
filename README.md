@@ -6,8 +6,8 @@ it was inspired by [RestfulizerJs by Ifnot](https://github.com/Ifnot/Restfulizer
 
 ### Simple Download
 
- - [jQuery version](https://raw.githubusercontent.com/KhaledElAnsari/RESTInTag/master/src/restintag.jquery.js)
- - [Vanilla Javascript](https://raw.githubusercontent.com/KhaledElAnsari/RESTInTag/master/src/restintag.vanilla.js)
+ - [jQuery version](https://github.com/KhaledElAnsari/RESTInTag/tree/master/src/jquery)
+ - [Vanilla Javascript](https://github.com/KhaledElAnsari/RESTInTag/tree/master/src/vanilla)
 
  after downloading include them in your html file like this
 
