@@ -47,6 +47,7 @@ easy! just add the following attributes to your HTML tag:
 1. `data-method`: the request type, GET, POST, PUT, etc.
 2. `data-target`: the url to send/get the data
 3. `data-disabled`: `true` to disable the tag until the request is done else just put `false`
+4. `data-once`: `true` to disable the tag entirely after the first request
 
 example:
 
@@ -74,7 +75,8 @@ options are the following (the seen values are the default):
     headers: {}, // the HTTP headers
     timeout: 0, // milliseconds to wait before cancelling the request, 0 means no timeout 
     data: {}, // request body specially for POST and PUT requests
-    disable: true // to disable the clicking event until the request is finished
+    disable: true, // to disable the clicking event until the request is finished
+    once: true // to disable the click event after the first request is processed
 }
 ```
 
@@ -93,7 +95,8 @@ options are the following (the seen values are the default):
     headers: {}, // the HTTP headers
     timeout: 0, // milliseconds to wait before cancelling the request, 0 means no timeout 
     data: {}, // request body specially for POST and PUT requests
-    disable: true // to disable the clicking event until the request is finished
+    disable: true, // to disable the clicking event until the request is finished
+    once: true // to disable the click event after the first request is processed
 }
 ```
 
