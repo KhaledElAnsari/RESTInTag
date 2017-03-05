@@ -1,6 +1,6 @@
 # RESTInTag
-An upcoming plugin to ease the REST requests by making them work directly from the HTML tags
-it was inspired by [RestfulizerJs by Ifnot](https://github.com/Ifnot/RestfulizerJs) but with a different implementation
+A JavaScript plugin to ease the HTTP requests by making them work directly from the HTML tags.
+it was inspired by [RestfulizerJs by Ifnot](https://github.com/Ifnot/RestfulizerJs) but with a different implementation.
 
 # Install
 
