@@ -12,6 +12,7 @@
 
 var rest = function(options, successCB, errorCB) {
     var defaultOptions = $.extend({
+        async: true,
         parse: false,
         target: null,
         method: "GET",
@@ -60,6 +61,7 @@ var rest = function(options, successCB, errorCB) {
                 });
             }
             $.ajax({
+                async: thisOptions.async,
                 url: thisOptions.target,
                 method: thisOptions.method,
                 headers: thisOptions.headers,
@@ -73,7 +75,7 @@ var rest = function(options, successCB, errorCB) {
                     else {
                         console.log(jqXHR);
                     }
-                },
+                }
             }).done(function() {
                 if(isDisabled) {
                     $this.attr("disabled", isDisabled);
