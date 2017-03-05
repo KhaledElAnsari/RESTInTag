@@ -53,7 +53,7 @@ var rest = function(options, successCB, errorCB) {
         $this.on("click", function(event) {
             event.preventDefault();
             event.stopPropagation();
-            if(isDisabled || isOnce) {
+            if(isOnce || isDisabled) {
                 $this.attr("disabled", isDisabled);
                 $this.css({
                     "pointer-events": "none",
@@ -76,7 +76,7 @@ var rest = function(options, successCB, errorCB) {
                     }
                 },
             }).done(function() {
-                if(isDisabled) {
+                if(!isOnce && isDisabled) {
                     $this.attr("disabled", isDisabled);
                     $this.css({
                         "pointer-events": "",

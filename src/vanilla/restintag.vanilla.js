@@ -70,7 +70,7 @@ var restintag = function(selector, options, successCB, errorCB) {
         element.addEventListener("click", function(event) {
             event.preventDefault();
             event.stopPropagation();
-            if(isDisabled || isOnce) {
+            if(isOnce || isDisabled) {
                 element.setAttribute("disabled", isDisabled);
                 element.style.cursor = "default";
                 element.style.pointerEvents = "none";
@@ -86,7 +86,7 @@ var restintag = function(selector, options, successCB, errorCB) {
                         else console.log("Server response for " + thisOptions.target + " is " + this.status);
                     }
 
-                    if(isDisabled) {
+                    if(!isOnce && isDisabled) {
                         element.removeAttribute("disabled");
                         element.style.cursor = "";
                         element.style.pointerEvents = "";
