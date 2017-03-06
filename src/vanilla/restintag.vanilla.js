@@ -34,7 +34,8 @@ var restintag = function(selector, options, successCB, errorCB) {
         headers: {},
         timeout: 0,
         data: {},
-        disable: true
+        disable: true,
+        once: false
     };
     for(var property in options) defaultOptions[property] = options[property];
 
@@ -47,8 +48,10 @@ var restintag = function(selector, options, successCB, errorCB) {
         var methodAttr = element.dataset ? element.dataset.method : element.getAttribute("data-method");
         var targetAttr = element.dataset ? element.dataset.target : element.getAttribute("data-target");
 
-        if(typeof methodAttr !== 'undefined' && methodAttr !== false) thisOptions.method = methodAttr;
-        if(typeof targetAttr !== 'undefined' && targetAttr !== false) thisOptions.target = targetAttr;
+        if(isOnce !== null && isOnce.length > 0) thisOptions.once = isOnce;
+        if(isDisabled !== null && isDisabled.length > 0) thisOptions.disable = isDisabled;
+        if(methodAttr !== null && methodAttr.length > 0) thisOptions.method = methodAttr;
+        if(targetAttr !== null && targetAttr.length > 0) thisOptions.target = targetAttr;
         element.removeAttribute("href");
 
         if (thisOptions.parse && thisOptions.method !== "GET") {
@@ -72,7 +75,7 @@ var restintag = function(selector, options, successCB, errorCB) {
             event.preventDefault();
             event.stopPropagation();
             if(isOnce || isDisabled) {
-                element.setAttribute("disabled", isDisabled);
+                element.setAttribute("disabled", isOnce || isDisabled);
                 element.style.cursor = "default";
                 element.style.pointerEvents = "none";
             }

@@ -19,7 +19,8 @@ var rest = function(options, successCB, errorCB) {
         headers: {},
         timeout: 0,
         data: {},
-        disable: true
+        disable: true,
+        once: false
     }, options);
 
     return $(this).each(function () {
@@ -27,11 +28,9 @@ var rest = function(options, successCB, errorCB) {
         var thisOptions = $.extend({}, defaultOptions);
         var isOnce = $this.data("once") || thisOptions.once;
         var isDisabled = $this.data("disabled") || thisOptions.disable;
-        var methodAttr = $this.attr("data-method");
-        var targetAttr = $this.attr("data-target");
+        thisOptions.method = $this.data("method") || thisOptions.method;
+        thisOptions.target = $this.data("target") || thisOptions.target;
 
-        if(typeof methodAttr !== 'undefined' && methodAttr !== false) thisOptions.method = $this.data("method");
-        if(typeof targetAttr !== 'undefined' && targetAttr !== false) thisOptions.target = $this.data("target");
         $this.removeAttr('href');
 
         if (thisOptions.parse) {
@@ -55,7 +54,7 @@ var rest = function(options, successCB, errorCB) {
             event.preventDefault();
             event.stopPropagation();
             if(isOnce || isDisabled) {
-                $this.attr("disabled", isDisabled);
+                $this.attr("disabled", isOnce || isDisabled);
                 $this.css({
                     "pointer-events": "none",
                     "cursor": "default"
@@ -85,6 +84,7 @@ var rest = function(options, successCB, errorCB) {
                         "cursor": ""
                     });
                 }
+                // else if(isOnce) $this.off("click");
             });
         });
     });
