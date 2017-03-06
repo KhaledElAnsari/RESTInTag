@@ -42,6 +42,7 @@ var restintag = function(selector, options, successCB, errorCB) {
         var thisOptions = {};
         for(var property in defaultOptions) thisOptions[property] = defaultOptions[property];
         
+        var isOnce = element.dataset ? element.dataset.once : element.getAttribute("data-once");
         var isDisabled = element.dataset ? element.dataset.disabled : element.getAttribute("data-disabled");
         var methodAttr = element.dataset ? element.dataset.method : element.getAttribute("data-method");
         var targetAttr = element.dataset ? element.dataset.target : element.getAttribute("data-target");
@@ -70,7 +71,7 @@ var restintag = function(selector, options, successCB, errorCB) {
         element.addEventListener("click", function(event) {
             event.preventDefault();
             event.stopPropagation();
-            if(isDisabled) {
+            if(isOnce || isDisabled) {
                 element.setAttribute("disabled", isDisabled);
                 element.style.cursor = "default";
                 element.style.pointerEvents = "none";
@@ -86,7 +87,7 @@ var restintag = function(selector, options, successCB, errorCB) {
                         else console.log("Server response for " + thisOptions.target + " is " + this.status);
                     }
 
-                    if(isDisabled) {
+                    if(!isOnce && isDisabled) {
                         element.removeAttribute("disabled");
                         element.style.cursor = "";
                         element.style.pointerEvents = "";

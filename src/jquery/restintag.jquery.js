@@ -25,6 +25,7 @@ var rest = function(options, successCB, errorCB) {
     return $(this).each(function () {
         var $this = $(this);
         var thisOptions = $.extend({}, defaultOptions);
+        var isOnce = $this.data("once") || thisOptions.once;
         var isDisabled = $this.data("disabled") || thisOptions.disable;
         var methodAttr = $this.attr("data-method");
         var targetAttr = $this.attr("data-target");
@@ -53,7 +54,7 @@ var rest = function(options, successCB, errorCB) {
         $this.on("click", function(event) {
             event.preventDefault();
             event.stopPropagation();
-            if(isDisabled) {
+            if(isOnce || isDisabled) {
                 $this.attr("disabled", isDisabled);
                 $this.css({
                     "pointer-events": "none",
@@ -77,7 +78,7 @@ var rest = function(options, successCB, errorCB) {
                     }
                 }
             }).done(function() {
-                if(isDisabled) {
+                if(!isOnce && isDisabled) {
                     $this.attr("disabled", isDisabled);
                     $this.css({
                         "pointer-events": "",
