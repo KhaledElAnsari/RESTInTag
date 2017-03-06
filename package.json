@@ -12,6 +12,7 @@
     "minify": "npm run minify-jquery && npm run minify-vanilla",
     "clean": "rimraf ./src/*/*.min.js",
     "build": "npm run clean && npm run minify",
+    "prepublish": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

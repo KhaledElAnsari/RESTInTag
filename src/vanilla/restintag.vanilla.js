@@ -27,6 +27,7 @@ var restintag = function(selector, options, successCB, errorCB) {
 
     var elements = [].slice.call(document.querySelectorAll(selector));
     var defaultOptions = {
+        async: true,
         parse: false,
         target: null,
         method: "GET",
@@ -93,7 +94,7 @@ var restintag = function(selector, options, successCB, errorCB) {
                     }
                 }
             };
-            xhr.open(thisOptions.method, thisOptions.target, true);
+            xhr.open(thisOptions.method, thisOptions.target, thisOptions.async);
             
             for(var header in thisOptions.headers) xhr.setRequestHeader(header, thisOptions.headers[header]);
             xhr.timeout = thisOptions.timeout; // time in milliseconds

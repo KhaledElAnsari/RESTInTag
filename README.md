@@ -59,6 +59,23 @@ or you can use the javascript apis, note the data attributes have the priority.
 
 # API
 
+### Options
+
+First you need to set your options, here's the available options (the seen values are the default):
+```javascript
+{
+    async: true, // if set to false calls will be synchronous
+    parse: false, // if you have query string, it will add them to the request body
+    target: null, // the url
+    method: "GET", // the request method
+    headers: {}, // the HTTP headers
+    timeout: 0, // milliseconds to wait before cancelling the request, 0 means no timeout 
+    data: {}, // request body specially for POST and PUT requests
+    disable: true, // to disable the clicking event until the request is finished
+    once: true // to disable the click event after the first request is processed
+}
+```
+
 ### Vanilla
 The zero dependency version, just add it to any project you have and it will work
 
@@ -66,38 +83,11 @@ The zero dependency version, just add it to any project you have and it will wor
 restintag(selector: String, options: Object, successCallback: Function, errorCallback: Function): void
 ```
 
-options are the following (the seen values are the default):
-```javascript
-{
-    parse: false, // if you have query string, it will add them to the request body
-    target: null, // the url
-    method: "GET", // the request method
-    headers: {}, // the HTTP headers
-    timeout: 0, // milliseconds to wait before cancelling the request, 0 means no timeout 
-    data: {}, // request body specially for POST and PUT requests
-    disable: true, // to disable the clicking event until the request is finished
-    once: true // to disable the click event after the first request is processed
-}
-```
-
 ### jQuery
 after adding jQuery use the `restintag()` function to do the magic
 
 ```javascript
 $(".selector").restintag(options: Object, successCallback: Function, errorCallback: Function): jQuery
-```
-options are the following (the seen values are the default):
-```javascript
-{
-    parse: false, // if you have query string, it will add them to the request body
-    target: null, // the url
-    method: "GET", // the request method
-    headers: {}, // the HTTP headers
-    timeout: 0, // milliseconds to wait before cancelling the request, 0 means no timeout 
-    data: {}, // request body specially for POST and PUT requests
-    disable: true, // to disable the clicking event until the request is finished
-    once: true // to disable the click event after the first request is processed
-}
 ```
 
 # Browser Support
@@ -112,6 +102,12 @@ Both jQuery version and Vanilla version support the following browsers:
 - Safari (Latest)
 - Vivaldi (Latest)
 - Epiphany (Latest)
+
+# Contributors
+
+List of people who contributed to this project, thank you people:
+
+- [Murat Doğan](https://github.com/muratdogan17)
 
 # License
 
