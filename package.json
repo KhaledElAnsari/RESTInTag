@@ -1,6 +1,6 @@
 {
   "name": "restintag",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "HTTP requests made easy through HTML tags",
   "main": "./src/index.js",
   "directories": {
@@ -28,7 +28,9 @@
     "json",
     "Front-End",
     "frontend",
-    "front end"
+    "front end",
+    "jquery-plugin",
+    "ecosystem:jquery"
   ],
   "author": "Khaled Al-Ansari <khaledelansari@gmail.com> (http://khaledelansari.com/)",
   "license": "MIT",
