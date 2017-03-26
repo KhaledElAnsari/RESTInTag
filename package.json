@@ -1,6 +1,6 @@
 {
   "name": "restintag",
-  "version": "0.2.1",
+  "version": "0.2.3",
   "description": "HTTP requests made easy through HTML tags",
   "main": "./src/index.js",
   "directories": {
