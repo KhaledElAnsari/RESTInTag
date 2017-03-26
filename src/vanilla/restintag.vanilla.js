@@ -75,7 +75,7 @@ var restintag = function(selector, options, successCB, errorCB) {
             event.preventDefault();
             event.stopPropagation();
             if(isOnce || isDisabled) {
-                element.setAttribute("disabled", isOnce || isDisabled);
+                element.disabled = isOnce || isDisabled;
                 element.style.cursor = "default";
                 element.style.pointerEvents = "none";
             }
