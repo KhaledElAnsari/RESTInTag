@@ -2,6 +2,9 @@
 A JavaScript plugin to ease the HTTP requests by making them work directly from the HTML tags.
 it was inspired by [RestfulizerJs by Ifnot](https://github.com/Ifnot/RestfulizerJs) but with a different implementation.
 
+[![https://nodei.co/npm/restintag.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/restintag.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/restintag)
+
+
 # Install
 
 ### Simple Download
